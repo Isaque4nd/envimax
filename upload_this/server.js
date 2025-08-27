@@ -62,7 +62,6 @@ const { warmerLoopInit } = require("./helper/addon/qr/warmer/index.js");
 const upload = require("./routes/broadcastUpload");
 app.use("/broadcastUpload", upload);
 
-const path = require("path");
 app.use("/reports", express.static(path.join(process.cwd(), "reports")));
 
 const status = require("./routes/broadcastUploadStatus");
