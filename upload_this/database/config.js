@@ -2,7 +2,7 @@ const mysql = require("mysql2");
 
 const con = mysql.createPool({
   connectionLimit: 100,
-  host: process.env.DBHOST || "localhost",
+  host: process.env.DBHOST || "mysql.railway.internal",
   port: process.env.DBPORT || 3306,
   user: process.env.DBUSER,
   password: process.env.DBPASS,
