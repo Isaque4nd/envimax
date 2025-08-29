@@ -5,7 +5,7 @@ const con = mysql.createPool({
   host: process.env.DBHOST || "shuttle.proxy.rlwy.net",
   port: process.env.DBPORT || 15256,
   user: process.env.DBUSER || "root",
-  password: process.env.DBPASS || "sua_senha",
+  password: process.env.DBPASS,
   database: process.env.DBNAME || "railway",
   charset: "utf8mb4",
 });
