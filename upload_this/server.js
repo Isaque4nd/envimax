@@ -67,12 +67,12 @@ app.use("/reports", express.static(path.join(process.cwd(), "reports")));
 const status = require("./routes/broadcastUploadStatus");
 app.use("/broadcastUploadStatus", status);
 
-const currentDir = process.cwd();
+const currentDir = __dirname;
 
-app.use(express.static(path.resolve(currentDir, "./client/public")));
+app.use(express.static(path.join(currentDir, "../client/public")));
 
-app.get("*", function (request, response) {
-  response.sendFile(path.resolve(currentDir, "./client/public", "index.html"));
+app.get("*", (req, res) => {
+  res.sendFile(path.join(currentDir, "../client/public", "index.html"));
 });
 
 const server = app.listen(process.env.PORT || 3010, () => {
