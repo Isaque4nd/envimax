@@ -58,12 +58,10 @@ app.use("/api/ai", aiRoute);
 
 const path = require("path");
 const { warmerLoopInit } = require("./helper/addon/qr/warmer/index.js");
+app.use("/reports", express.static(path.join(process.cwd(), "reports")));
 
 const upload = require("./routes/broadcastUpload");
 app.use("/broadcastUpload", upload);
-
-const reports = require("reports");
-app.use("/reports", express.static(reports.join(process.cwd(), "reports")));
 
 const status = require("./routes/broadcastUploadStatus");
 app.use("/broadcastUploadStatus", status);
